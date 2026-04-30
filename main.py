@@ -18,8 +18,8 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
-from pydantic import BaseModel  # v1
+from fastapi.responses import HTMLResponse, RedirectResponse
+from pydantic import BaseModel
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -67,14 +67,10 @@ def make_eb_jwt() -> str:
     from cryptography.hazmat.primitives.asymmetric import padding
     import time
 
-    header  = {
-        "alg": "RS256",
-        "typ": "JWT",
-        "kid": EB_APP_ID,        # Application ID — requerido por Enablebanking
-    }
+    header  = {"alg": "RS256", "typ": "JWT", "kid": EB_APP_ID}
     payload = {
-        "iss": "enablebanking.com",  # siempre este valor exacto
-        "aud": "tpp.local",          # siempre este valor exacto
+        "iss": "enablebanking.com",
+        "aud": "api.enablebanking.com",
         "iat": int(time.time()),
         "exp": int(time.time()) + 3600,
     }
@@ -117,94 +113,9 @@ async def eb_post(path: str, body: dict) -> dict:
 app = FastAPI(title="Cuentas Backend", version="0.1.0")
 
 app.add_middleware(CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],   # En producción limitar al dominio de la app
     allow_methods=["*"],
-    allow_headers=["*"],
-    allow_credentials=True)
-
-# Servir la app Finanza directamente desde el backend
-@app.get("/app", response_class=HTMLResponse)
-async def serve_app():
-    """Sirve la app Finanza — abre http://localhost:8000/app"""
-    import glob, os
-    # Buscar finanza2.html en carpetas cercanas
-    candidates = [
-        Path("../finanza2.html"),
-        Path("../../finanza2.html"),
-        Path("finanza2.html"),
-    ]
-    # También buscar en el directorio padre
-    parent = Path("..").resolve()
-    found = list(parent.glob("**/finanza2.html"))
-    candidates += found
-    
-    for p in candidates:
-        if p.exists():
-            content = p.read_text(encoding='utf-8')
-            # Inyectar auto-sync: el puerto ya está en la URL
-            content = content.replace(
-                "const SYNC_PORT = new URLSearchParams(window.location.search).get('sync_port') || 7432;",
-                f"const SYNC_PORT = {PORT}; // inyectado por el backend"
-            )
-            return HTMLResponse(content)
-    
-    return HTMLResponse("""
-    <html><body style="font-family:monospace;background:#0f0f0f;color:#e5e7eb;padding:40px">
-    <h2 style="color:#c8f060">⚠ finanza2.html no encontrado</h2>
-    <p>Coloca finanza2.html en la carpeta ProyectoFintonic y reinicia el servidor.</p>
-    <p><a href="/" style="color:#60a5fa">← Volver al panel</a></p>
-    </body></html>
-    """)
-
-# ── SYNC BRIDGE ──
-@app.get("/sync-bridge", response_class=HTMLResponse)
-async def serve_bridge():
-    """Página de importación manual — abre http://localhost:8000/sync-bridge"""
-    parent = Path("..").resolve()
-    candidates = [Path("../sync-bridge.html"), Path("sync-bridge.html")] + list(parent.glob("**/sync-bridge.html"))
-    for p in candidates:
-        if p.exists():
-            return HTMLResponse(p.read_text(encoding="utf-8"))
-    # Si no hay archivo, devolver versión inline
-    return HTMLResponse(f"""<!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Cuentas · Sync</title>
-<style>body{{font-family:sans-serif;background:#0a0b10;color:#e8e9ec;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;flex-direction:column;gap:20px}}
-h1{{color:#b8ff5a;font-size:24px}}p{{color:#7880a8;font-size:14px}}
-button{{background:#b8ff5a;color:#0a0b10;border:none;border-radius:10px;padding:14px 32px;font-size:16px;font-weight:800;cursor:pointer}}
-#st{{font-size:14px;color:#7880a8;margin-top:10px}}.ok{{color:#b8ff5a!important}}.err{{color:#ff5f7a!important}}</style>
-</head><body>
-<h1>⚡ Cuentas · Importar</h1>
-<p id="st">Conectando con el backend...</p>
-<button onclick="doImport()">Importar transacciones →</button>
-<script>
-async function doImport(){{
-  const s=document.getElementById('st');
-  s.textContent='Descargando...';
-  try{{
-    const r=await fetch('http://localhost:{PORT}/transactions?limit=1000');
-    const data=await r.json();
-    const txs=data.transactions||[];
-    const KEY='finanza_v2';
-    let state={{user:{{name:'',claudeKey:''}},txs:[],invs:[],budgets:{{}},imports:[]}};
-    try{{const d=localStorage.getItem(KEY);if(d)state={{...state,...JSON.parse(d)}};}}catch(e){{}}
-    let n=0,dup=0;
-    txs.forEach(t=>{{
-      const exists=state.txs.find(x=>x.date===t.date&&Math.abs(x.amount-t.amount)<0.01&&(x.desc||'').toLowerCase()===(t.desc||'').toLowerCase());
-      if(exists){{dup++;return;}}
-      state.txs.push({{id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),date:t.date,desc:t.desc,amount:t.amount,cat:t.cat||'Otros',acc:t.acc||'Banco',src:'sync'}});
-      n++;
-    }});
-    localStorage.setItem(KEY,JSON.stringify(state));
-    s.className='ok';
-    s.textContent=`✓ ${{n}} transacciones importadas${{dup?' · '+dup+' ya existían':''}}. Redirigiendo...`;
-    setTimeout(()=>window.location.href='http://localhost:{PORT}/app',2000);
-  }}catch(e){{s.className='err';s.textContent='✗ Error: '+e.message;}}
-}}
-fetch('http://localhost:{PORT}/status').then(r=>r.json()).then(d=>{{
-  document.getElementById('st').textContent=`✓ Backend activo · ${{d.transactions}} transacciones disponibles`;
-  document.getElementById('st').className='ok';
-}}).catch(()=>{{document.getElementById('st').textContent='✗ Backend no disponible';document.getElementById('st').className='err';}});
-</script></body></html>""")
+    allow_headers=["*"])
 
 # ── RAÍZ: instrucciones ──
 @app.get("/", response_class=HTMLResponse)
