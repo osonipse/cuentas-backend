@@ -216,7 +216,7 @@ async def connect_bank(
                    "valid_until": (datetime.utcnow() + timedelta(days=90)).isoformat() + "Z"},
         "aspsp": {"name": bank, "country": country},
         "psu_type": "personal",
-        "redirect_url": REDIRECT_URL,
+        "redirect_uri": REDIRECT_URL,
         "state": session_state,
     }
 
@@ -263,7 +263,7 @@ async def oauth_callback(
         raise HTTPException(400, "Estado de sesión no reconocido")
 
     # Confirmar sesión con Enablebanking
-    sess_data = await eb_post("/sessions", {"code": code, "redirect_url": REDIRECT_URL})
+    sess_data = await eb_post("/sessions", {"code": code, "redirect_uri": REDIRECT_URL})
     session_id = sess_data.get("session_id")
     accounts   = sess_data.get("accounts", [])
 
