@@ -166,6 +166,21 @@ td:first-child{{color:#94a3b8;width:160px}}</style>
 {'<div class="card"><p class="err">⚠ Configura tu .env antes de continuar.</p><p style="font-size:13px;color:#94a3b8;margin-top:8px">Copia <code>.env.example</code> a <code>.env</code> y añade tu Application ID y ruta a la private key de Enablebanking.</p></div>' if not configured else '<div class="card"><p class="ok">✓ Listo. Ve a <a href="/banks?country=ES">/banks?country=ES</a> para ver los bancos disponibles.</p></div>'}
 </body></html>"""
 
+# ── TEST AUTH ──
+@app.get("/test-auth")
+async def test_auth():
+    """Muestra el body exacto que enviamos a Enablebanking"""
+    import uuid
+    body = {
+        "access": {"balances": True, "transactions": True,
+                   "valid_until": "2026-07-29T00:00:00Z"},
+        "aspsp": {"name": "BBVA", "country": "ES"},
+        "psu_type": "personal",
+        "redirect_url": REDIRECT_URL,
+        "state": str(uuid.uuid4()),
+    }
+    return {"body_sent_to_enablebanking": body, "redirect_url_value": REDIRECT_URL}
+
 # ── DEBUG ──
 @app.get("/debug")
 async def debug():
