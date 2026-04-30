@@ -1,0 +1,1117 @@
+{
+  "sessions": {
+    "6e61e569-35a5-4376-a317-0e6d83ff47cf": {
+      "authorization_id": "4ca54f73-8188-4ee8-a567-596d9debb148",
+      "bank": "Mock ASPSP",
+      "country": "ES",
+      "created": "2026-04-25T07:04:46.324461",
+      "session_id": null,
+      "accounts": [],
+      "status": "pending"
+    },
+    "a626a1c9-6174-4900-abef-766c34a54e54": {
+      "authorization_id": "43de51e1-98d0-44f5-a1a4-162203ce780f",
+      "bank": "BBVA",
+      "country": "ES",
+      "created": "2026-04-25T07:05:46.434992",
+      "session_id": null,
+      "accounts": [],
+      "status": "pending"
+    },
+    "ec7d2e20-18e9-4726-8079-0f64947bf93f": {
+      "authorization_id": "e310334e-7c44-4c4f-9b3b-1f2b5c53af1c",
+      "bank": "Banco de Sabadell",
+      "country": "ES",
+      "created": "2026-04-25T07:06:50.741653",
+      "session_id": "dfc91fb0-b9c8-4d05-9100-be9b3933acc0",
+      "accounts": [
+        {
+          "account_id": {
+            "iban": "ES6200810602620003333338",
+            "other": null
+          },
+          "all_account_ids": [
+            {
+              "identification": "ES6200810602620003333338",
+              "scheme_name": "IBAN",
+              "issuer": null
+            }
+          ],
+          "account_servicer": null,
+          "name": "Nombre Apellido1 Apellido2",
+          "details": "cuenta pruebas 2",
+          "usage": "PRIV",
+          "cash_account_type": "CACC",
+          "product": "CUENTA AVANZA",
+          "currency": "EUR",
+          "psu_status": "enabled",
+          "credit_limit": null,
+          "legal_age": null,
+          "postal_address": null,
+          "uid": "c851507f-06a9-4f94-9ff4-b7e1c70c17dd",
+          "identification_hash": "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.GT5UIIoaS5oRWC4dSp+caS8oVkDE539JQ3R9tSMoNlg=",
+          "identification_hashes": [
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXQpd.IlSZ4jAT2QzS4wQBkC0ZRms+1KwyUBz2jpfoYGwAjmc=",
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.GT5UIIoaS5oRWC4dSp+caS8oVkDE539JQ3R9tSMoNlg=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKInJlc291cmNlX2lkIgpdCl0=.9FIpbRD8kllaNsZBMrIkVtyDRsKkOFYxnTcKfdxiqaI=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKIm5hbWUiCl0KXQ==.VRYn3+gUMkPueYzI0Lqj9uaOPDcVSe0swtolnIFpxnE="
+          ]
+        },
+        {
+          "account_id": {
+            "iban": "ES7100810602660006666676",
+            "other": null
+          },
+          "all_account_ids": [
+            {
+              "identification": "ES7100810602660006666676",
+              "scheme_name": "IBAN",
+              "issuer": null
+            }
+          ],
+          "account_servicer": null,
+          "name": "Nombre Apellido1 Apellido2",
+          "details": "cuenta pruebas 5 bloqueada",
+          "usage": "PRIV",
+          "cash_account_type": "CACC",
+          "product": "CUENTA EXPANSION",
+          "currency": "EUR",
+          "psu_status": "enabled",
+          "credit_limit": null,
+          "legal_age": null,
+          "postal_address": null,
+          "uid": "c4bd0339-3dd6-4dfd-b03e-1ff61a8dc7ed",
+          "identification_hash": "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.eJFFtkGpcXarJ6QgCwnZIBWIoMPd9DAo5Iuwz017ikM=",
+          "identification_hashes": [
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXQpd.Z+RxFyKsSShvjJdBvIVGgDIMCfuQHDChQexTKeWM1z0=",
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.eJFFtkGpcXarJ6QgCwnZIBWIoMPd9DAo5Iuwz017ikM=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKInJlc291cmNlX2lkIgpdCl0=.YXHiY6/RcNvicl1WV8n498LvjfsGJKW1DJSNT9tahw8=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKIm5hbWUiCl0KXQ==.VRYn3+gUMkPueYzI0Lqj9uaOPDcVSe0swtolnIFpxnE="
+          ]
+        },
+        {
+          "account_id": {
+            "iban": "ES9500810602640008888806",
+            "other": null
+          },
+          "all_account_ids": [
+            {
+              "identification": "ES9500810602640008888806",
+              "scheme_name": "IBAN",
+              "issuer": null
+            }
+          ],
+          "account_servicer": null,
+          "name": "Nombre Apellido1 Apellido2",
+          "details": "prueba empresa bloqueada",
+          "usage": "PRIV",
+          "cash_account_type": "CACC",
+          "product": "CUENTA EXPANSION NEGOCIOS",
+          "currency": "EUR",
+          "psu_status": "enabled",
+          "credit_limit": null,
+          "legal_age": null,
+          "postal_address": null,
+          "uid": "0a8721f1-4513-47e4-835f-17e4cf61a88f",
+          "identification_hash": "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.DrWBTSOBccfIv4i37h7ejfaX0TYMsRPWPhX1ePBdp+M=",
+          "identification_hashes": [
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXQpd.M/39wu/VpC6iF/WKneDKtm8pu+oXFc8vRBwFHPlng5I=",
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.DrWBTSOBccfIv4i37h7ejfaX0TYMsRPWPhX1ePBdp+M=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKInJlc291cmNlX2lkIgpdCl0=.udxgvxChAlA07dxu/sUVb4HJlM1GKcWhp2tAeWUImsA=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKIm5hbWUiCl0KXQ==.VRYn3+gUMkPueYzI0Lqj9uaOPDcVSe0swtolnIFpxnE="
+          ]
+        },
+        {
+          "account_id": {
+            "iban": "ES8600810602630007777785",
+            "other": null
+          },
+          "all_account_ids": [
+            {
+              "identification": "ES8600810602630007777785",
+              "scheme_name": "IBAN",
+              "issuer": null
+            }
+          ],
+          "account_servicer": null,
+          "name": "Nombre Apellido1 Apellido2",
+          "details": "prueba empresa",
+          "usage": "PRIV",
+          "cash_account_type": "CACC",
+          "product": "CUENTA EXPANSION NEGOCIOS",
+          "currency": "EUR",
+          "psu_status": "enabled",
+          "credit_limit": null,
+          "legal_age": null,
+          "postal_address": null,
+          "uid": "d1dab9dc-ad24-4bab-b826-c9c819a93a1f",
+          "identification_hash": "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.w4LduvKgOgmgQEs3ENfrb2k/BIT77Djkcb9fBas8f/U=",
+          "identification_hashes": [
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXQpd.ubAyZkgWXmPBRQowK3ytGXTZgBxGeOHGNM8D0aNIJF4=",
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.w4LduvKgOgmgQEs3ENfrb2k/BIT77Djkcb9fBas8f/U=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKInJlc291cmNlX2lkIgpdCl0=.UaixguZcQTTx5gXXP4YmhvpSkEyy61Ci1i/2ir26V74=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKIm5hbWUiCl0KXQ==.VRYn3+gUMkPueYzI0Lqj9uaOPDcVSe0swtolnIFpxnE="
+          ]
+        },
+        {
+          "account_id": {
+            "iban": "ES1800810602610001111120",
+            "other": null
+          },
+          "all_account_ids": [
+            {
+              "identification": "ES1800810602610001111120",
+              "scheme_name": "IBAN",
+              "issuer": null
+            }
+          ],
+          "account_servicer": null,
+          "name": "Nombre Apellido1 Apellido2",
+          "details": "cuenta pruebas 1",
+          "usage": "PRIV",
+          "cash_account_type": "CACC",
+          "product": "CUENTA EXPANSION",
+          "currency": "EUR",
+          "psu_status": "enabled",
+          "credit_limit": null,
+          "legal_age": null,
+          "postal_address": null,
+          "uid": "e2a228c3-c23e-4c1a-8c97-1a8268a25276",
+          "identification_hash": "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.ECB3RdMe3VvOhMVXWhKdYpPolRh0EWeqyEIR6BOoYgs=",
+          "identification_hashes": [
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXQpd.c5kFltJHj3aWIxW0OzB2JnGsIXjFGc8/g8sJd/+vCI4=",
+            "WwpbCiJhY2NvdW50IiwKImFjY291bnRfaWQiLAoiaWJhbiIKXSwKWwoiYWNjb3VudCIsCiJjdXJyZW5jeSIKXQpd.ECB3RdMe3VvOhMVXWhKdYpPolRh0EWeqyEIR6BOoYgs=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKInJlc291cmNlX2lkIgpdCl0=.20n3s5SPpNPAvo79eIZ4lge5+LQP5TChlwXTZy5sGZE=",
+            "WwpbCiJhc3BzcF9uYW1lIgpdLApbCiJhc3BzcF9jb3VudHJ5IgpdLApbCiJhY2NvdW50IiwKIm5hbWUiCl0KXQ==.VRYn3+gUMkPueYzI0Lqj9uaOPDcVSe0swtolnIFpxnE="
+          ]
+        }
+      ],
+      "status": "active",
+      "connected": "2026-04-25T07:07:49.632164"
+    }
+  },
+  "transactions": [
+    {
+      "id": "20190208002271300000",
+      "date": "2026-01-29",
+      "desc": "TRANSFERENCIA TARGET2 A CDS11739TRF001/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -5.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190211001920400000",
+      "date": "2026-01-31",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.4,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181027007446300000",
+      "date": "2026-01-27",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.4,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190201005867500000",
+      "date": "2026-01-26",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -11.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190201006218400000",
+      "date": "2026-02-05",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -75.51,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181026007534100000",
+      "date": "2026-01-30",
+      "desc": "TRANSFERENCIA A TRFXXX314/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -5.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190208002183600000",
+      "date": "2026-01-29",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -11.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190208003850100000",
+      "date": "2026-02-04",
+      "desc": "TRANSFERENCIA A CDS11739TRF001/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -5.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181025007621800000",
+      "date": "2026-02-06",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -11.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190211001218700000",
+      "date": "2026-02-10",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.4,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190208003587000000",
+      "date": "2026-02-08",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.4,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190201005428900000",
+      "date": "2026-02-11",
+      "desc": "TRANSFERENCIA TARGET2 A CDS11739TRF001/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -5.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181024007709500000",
+      "date": "2026-02-07",
+      "desc": "TRANSFERENCIA TARGET2 A TRFXXX314/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -5.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181102006920100000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -11.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190208003411600000",
+      "date": "2026-02-11",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.4,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190211001832700000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A CDS11739TRF001/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190208002885300000",
+      "date": "2026-02-11",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.4,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206003937800000",
+      "date": "2026-02-14",
+      "desc": "TRANSFERENCIA DE &WNOMBRE P01789702 &NPRIAPE V01789702 I &ASEGAPE T01789702/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": 1.0,
+      "cat": "Ingresos",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190201005165800000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -11.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190205004464100000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -75.51,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629022971500000",
+      "date": "2026-01-26",
+      "desc": "TRANSFERENCIA A TRF092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021918900000",
+      "date": "2026-01-27",
+      "desc": "TRANSFERENCIA A TRF094/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.04,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629022796000000",
+      "date": "2026-02-02",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021392600000",
+      "date": "2026-01-29",
+      "desc": "TRANSFERENCIA A BENEFICIARIO/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021655800000",
+      "date": "2026-01-29",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021568100000",
+      "date": "2026-02-03",
+      "desc": "TRANSFERENCIA A TRF094_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.04,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206018673500000",
+      "date": "2026-02-03",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629022708300000",
+      "date": "2026-02-07",
+      "desc": "TRANSFERENCIA A TRF092_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130022094300000",
+      "date": "2026-02-08",
+      "desc": "TRANSFERENCIA A TRF0092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206019287500000",
+      "date": "2026-02-08",
+      "desc": "TRANSFERENCIA A TEST/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -4.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629023410000000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -12.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021480300000",
+      "date": "2026-02-16",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206018849000000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.95,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021304900000",
+      "date": "2026-02-16",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.15,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130021129500000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.95,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206018322700000",
+      "date": "2026-01-30",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629033497000000",
+      "date": "2026-01-30",
+      "desc": "TRANSFERENCIA A TRF092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190131031216400000",
+      "date": "2026-01-26",
+      "desc": "TRANSFERENCIA A TRF092_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190131031041000000",
+      "date": "2026-01-30",
+      "desc": "TRANSFERENCIA A FELIPE/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -12.21,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190131030953300000",
+      "date": "2026-02-06",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -6.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629033584700000",
+      "date": "2026-02-07",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -12.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206030339300000",
+      "date": "2026-02-01",
+      "desc": "TRANSFERENCIA A TRF095/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.05,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206029988500000",
+      "date": "2026-02-11",
+      "desc": "TRANSFERENCIA A TEST/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -2.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130032619800000",
+      "date": "2026-02-14",
+      "desc": "TRANSFERENCIA A TRF0092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629033760100000",
+      "date": "2026-02-10",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -12.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629033409300000",
+      "date": "2026-02-14",
+      "desc": "TRANSFERENCIA A TRF0092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206029637600000",
+      "date": "2026-02-16",
+      "desc": "TRANSFERENCIA A test/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -4.03,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130031742700000",
+      "date": "2026-02-14",
+      "desc": "TRANSFERENCIA A abn/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -10.8,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130031830400000",
+      "date": "2026-02-14",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -2.15,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130032356700000",
+      "date": "2026-02-15",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180629033321500000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190130032269000000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A TRF092_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206029023600000",
+      "date": "2026-01-31",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206028935900000",
+      "date": "2026-02-01",
+      "desc": "TRANSFERENCIA A TEST/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -8.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190206028848200000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180711028409600000",
+      "date": "2026-01-25",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190123026830800000",
+      "date": "2026-01-31",
+      "desc": "TRANSFERENCIA A TRF096_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190124024374900000",
+      "date": "2026-01-28",
+      "desc": "TRANSFERENCIA A BENEFICIARI TARGET 2/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -24.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180711028760500000",
+      "date": "2026-01-25",
+      "desc": "TRANSFERENCIA A TRF092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180711028585100000",
+      "date": "2026-01-31",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190124024111700000",
+      "date": "2026-02-05",
+      "desc": "TRANSFERENCIA DE &ONOMBRE Q06036943 &EPRIAPE M060369/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": 3.01,
+      "cat": "Ingresos",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180711028234200000",
+      "date": "2026-02-03",
+      "desc": "TRANSFERENCIA A TRF092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190123026216800000",
+      "date": "2026-02-10",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -6.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180711028058800000",
+      "date": "2026-02-04",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180125028321900000",
+      "date": "2026-02-05",
+      "desc": "TRANSFERENCIA A TRF096_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.01,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180125028497400000",
+      "date": "2026-02-05",
+      "desc": "TRANSFERENCIA A TRF092_b/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190124023760900000",
+      "date": "2026-02-08",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -12.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180125028146500000",
+      "date": "2026-02-09",
+      "desc": "TRANSFERENCIA A TRF0092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190124023585400000",
+      "date": "2026-02-10",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -12.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20180125028672800000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A TRF0092/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.02,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190123026129100000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A BENEFICIARI NO EEE/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -50.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190124024287100000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -12.5,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190125027883400000",
+      "date": "2026-02-17",
+      "desc": "COMISIONES/DB/BSABESBB/TXT/",
+      "amount": -5.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190109003384700000",
+      "date": "2026-01-26",
+      "desc": "TRANSFERENCIA A TESTING 09052018 0:49:20/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190126001692000000",
+      "date": "2026-02-01",
+      "desc": "TRANSFERENCIA A TESTING 27052018 20:54:15/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181022005376000000",
+      "date": "2026-02-03",
+      "desc": "TRASPASO 0052-00010896-18/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": 0.01,
+      "cat": "Ingresos",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190108003484200000",
+      "date": "2026-01-30",
+      "desc": "TRANSFERENCIA A TESTING 08052018 11:13:29/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190107003583800000",
+      "date": "2026-01-31",
+      "desc": "TRANSFERENCIA A TESTING 04052018 20:59:27/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190106003683300000",
+      "date": "2026-02-06",
+      "desc": "TRANSFERENCIA A TESTING 03052018 21:06:20/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190125001791600000",
+      "date": "2026-02-07",
+      "desc": "TRANSFERENCIA A TESTING 25052018 9:26:21/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181021005475500000",
+      "date": "2026-02-06",
+      "desc": "TRASPASO 0052-00010896-18/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": 0.01,
+      "cat": "Ingresos",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181020005575100000",
+      "date": "2026-02-07",
+      "desc": "TRASPASO 0052-00010896-18/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": 0.01,
+      "cat": "Ingresos",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190105003782900000",
+      "date": "2026-02-13",
+      "desc": "TRANSFERENCIA A TESTING 03052018 15:03:11/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20181019005674700000",
+      "date": "2026-02-17",
+      "desc": "TRASPASO 0052-00010896-18/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": 0.01,
+      "cat": "Ingresos",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190124001891200000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A TESTING 24052018 18:52:28/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190104003882500000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A TESTING 02052018 23:31:59/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -0.19,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190215000001000000",
+      "date": "2026-02-11",
+      "desc": "APORTACION EXTRAORDINARIA POL. 32000007 CERT. 120443 PLAN AHORRO TRIMESTRAL/DB/BSABESBB/TXT/",
+      "amount": -2000.85,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    },
+    {
+      "id": "20190213000010000000",
+      "date": "2026-02-17",
+      "desc": "TRANSFERENCIA A Prueba jordi DES 001/DB/BSABESBB/CB/BSABESBBXXX/TXT/",
+      "amount": -1.0,
+      "cat": "Otros",
+      "acc": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "src": "enablebanking"
+    }
+  ],
+  "accounts": [
+    {
+      "uid": "c851507f-06a9-4f94-9ff4-b7e1c70c17dd",
+      "bank": "Banco de Sabadell",
+      "iban": "ES6200810602620003333338",
+      "name": "Nombre Apellido1 Apellido2",
+      "currency": "EUR",
+      "session_id": "dfc91fb0-b9c8-4d05-9100-be9b3933acc0"
+    },
+    {
+      "uid": "c4bd0339-3dd6-4dfd-b03e-1ff61a8dc7ed",
+      "bank": "Banco de Sabadell",
+      "iban": "ES7100810602660006666676",
+      "name": "Nombre Apellido1 Apellido2",
+      "currency": "EUR",
+      "session_id": "dfc91fb0-b9c8-4d05-9100-be9b3933acc0"
+    },
+    {
+      "uid": "0a8721f1-4513-47e4-835f-17e4cf61a88f",
+      "bank": "Banco de Sabadell",
+      "iban": "ES9500810602640008888806",
+      "name": "Nombre Apellido1 Apellido2",
+      "currency": "EUR",
+      "session_id": "dfc91fb0-b9c8-4d05-9100-be9b3933acc0"
+    },
+    {
+      "uid": "d1dab9dc-ad24-4bab-b826-c9c819a93a1f",
+      "bank": "Banco de Sabadell",
+      "iban": "ES8600810602630007777785",
+      "name": "Nombre Apellido1 Apellido2",
+      "currency": "EUR",
+      "session_id": "dfc91fb0-b9c8-4d05-9100-be9b3933acc0"
+    },
+    {
+      "uid": "e2a228c3-c23e-4c1a-8c97-1a8268a25276",
+      "bank": "Banco de Sabadell",
+      "iban": "ES1800810602610001111120",
+      "name": "Nombre Apellido1 Apellido2",
+      "currency": "EUR",
+      "session_id": "dfc91fb0-b9c8-4d05-9100-be9b3933acc0"
+    }
+  ]
+}
