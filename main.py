@@ -216,7 +216,7 @@ async def connect_bank(
                    "valid_until": (datetime.utcnow() + timedelta(days=90)).isoformat() + "Z"},
         "aspsp": {"name": bank, "country": country},
         "psu_type": "personal",
-        "redirect_uri": REDIRECT_URL,
+        "redirect_url": REDIRECT_URL,
         "state": session_state,
     }
 
