@@ -32,7 +32,7 @@ APP_NAME      = os.getenv("APP_NAME", "Cuentas")
 EB_APP_ID     = os.getenv("EB_APP_ID", "")       # Tu Application ID de Enablebanking
 EB_KEY_PATH   = os.getenv("EB_KEY_PATH", "")     # Ruta a tu private key .pem
 EB_SANDBOX    = os.getenv("EB_SANDBOX", "true").lower() == "true"
-REDIRECT_URL  = os.getenv("REDIRECT_URL", f"http://localhost:{PORT}/callback")
+REDIRECT_URL  = os.getenv("REDIRECT_URL") or f"http://localhost:{PORT}/callback"
 FRONTEND_URL  = os.getenv("FRONTEND_URL", "")    # Si tienes la app en otra URL
 
 EB_BASE       = "https://api.enablebanking.com"
@@ -165,6 +165,11 @@ td:first-child{{color:#94a3b8;width:160px}}</style>
 
 {'<div class="card"><p class="err">⚠ Configura tu .env antes de continuar.</p><p style="font-size:13px;color:#94a3b8;margin-top:8px">Copia <code>.env.example</code> a <code>.env</code> y añade tu Application ID y ruta a la private key de Enablebanking.</p></div>' if not configured else '<div class="card"><p class="ok">✓ Listo. Ve a <a href="/banks?country=ES">/banks?country=ES</a> para ver los bancos disponibles.</p></div>'}
 </body></html>"""
+
+# ── DEBUG ──
+@app.get("/debug")
+async def debug():
+    return {"REDIRECT_URL": REDIRECT_URL, "EB_SANDBOX": EB_SANDBOX, "EB_APP_ID": EB_APP_ID[:8]+"..."}
 
 # ── STATUS JSON ──
 @app.get("/status")
