@@ -116,6 +116,92 @@ app.add_middleware(CORSMiddleware,
     allow_methods=["*"],
     allow_headers=["*"])
 
+
+# ── DEBUG ──
+@app.get("/debug")
+async def debug():
+    return {"REDIRECT_URL": REDIRECT_URL, "EB_SANDBOX": EB_SANDBOX, "EB_APP_ID": EB_APP_ID[:8]+"..."}
+
+# ── SYNC BRIDGE ──
+@app.get("/sync-bridge", response_class=HTMLResponse)
+async def serve_bridge():
+    return HTMLResponse("""<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>Cuentas Sync</title>
+<style>
+body{font-family:sans-serif;background:#0a0b10;color:#e8e9ec;display:flex;align-items:center;
+justify-content:center;height:100vh;margin:0;flex-direction:column;gap:20px}
+h1{color:#b8ff5a;font-size:24px}
+button{background:#b8ff5a;color:#0a0b10;border:none;border-radius:10px;
+padding:14px 32px;font-size:16px;font-weight:800;cursor:pointer}
+#st{font-size:14px;color:#7880a8}
+.ok{color:#b8ff5a!important}.err{color:#ff5f7a!important}
+</style></head><body>
+<h1>Cuentas · Importar transacciones</h1>
+<p id="st">Conectando con el backend...</p>
+<button onclick="doImport()">Importar ahora</button>
+<script>
+async function doImport(){
+  const s=document.getElementById('st');
+  s.textContent='Descargando...';
+  try{
+    const r=await fetch('/transactions?limit=1000');
+    const data=await r.json();
+    const txs=data.transactions||[];
+    const KEY='finanza_v2';
+    let state={user:{name:'',claudeKey:''},txs:[],invs:[],budgets:{},imports:[]};
+    try{const d=localStorage.getItem(KEY);if(d)state={...state,...JSON.parse(d)};}catch(e){}
+    let n=0,dup=0;
+    txs.forEach(t=>{
+      const exists=state.txs.find(x=>
+        x.date===t.date &&
+        Math.abs(x.amount-t.amount)<0.01 &&
+        (x.desc||'').toLowerCase()===(t.desc||'').toLowerCase()
+      );
+      if(exists){dup++;return;}
+      state.txs.push({
+        id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),
+        date:t.date,desc:t.desc,amount:t.amount,
+        cat:t.cat||'Otros',acc:t.acc||'Banco',src:'sync'
+      });
+      n++;
+    });
+    localStorage.setItem(KEY,JSON.stringify(state));
+    s.className='ok';
+    s.textContent=n+' transacciones importadas'+(dup?' · '+dup+' ya existian':'');
+    setTimeout(()=>window.location.href='/app',2000);
+  }catch(e){s.className='err';s.textContent='Error: '+e.message;}
+}
+fetch('/status')
+  .then(r=>r.json())
+  .then(d=>{
+    document.getElementById('st').textContent=d.transactions+' transacciones disponibles';
+    document.getElementById('st').className='ok';
+  })
+  .catch(()=>{});
+</script></body></html>""")
+
+# ── APP ──
+@app.get("/app", response_class=HTMLResponse)
+async def serve_app():
+    candidates = [
+        Path("../finanza2.html"),
+        Path("../../finanza2.html"),
+        Path("finanza2.html"),
+    ]
+    parent = Path("..").resolve()
+    found = list(parent.glob("**/finanza2.html"))
+    candidates += found
+    for p in candidates:
+        if p.exists():
+            content = p.read_text(encoding='utf-8')
+            content = content.replace(
+                "const SYNC_PORT = new URLSearchParams(window.location.search).get('sync_port') || 7432;",
+                f"const SYNC_PORT = {PORT};"
+            )
+            return HTMLResponse(content)
+    return HTMLResponse("<h1>finanza2.html no encontrado</h1><p>Coloca finanza2.html en la carpeta ProyectoFintonic</p>")
+
+
 # ── RAÍZ: instrucciones ──
 @app.get("/", response_class=HTMLResponse)
 async def root():
