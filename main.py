@@ -69,7 +69,8 @@ def make_eb_jwt() -> str:
 
     header  = {"alg": "RS256", "typ": "JWT", "kid": EB_APP_ID}
     payload = {
-        "iss": EB_APP_ID,
+        "iss": "enablebanking.com",
+        "aud": "api.enablebanking.com",
         "iat": int(time.time()),
         "exp": int(time.time()) + 3600,
     }
