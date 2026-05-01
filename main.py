@@ -67,7 +67,7 @@ def make_eb_jwt() -> str:
     from cryptography.hazmat.primitives.asymmetric import padding
     import time
 
-    header  = {"alg": "RS256", "typ": "JWT"}
+    header  = {"alg": "RS256", "typ": "JWT", "kid": EB_APP_ID}
     payload = {
         "iss": EB_APP_ID,
         "iat": int(time.time()),
