@@ -119,6 +119,13 @@ app.add_middleware(CORSMiddleware,
 
 
 # ── DEBUG ──
+@app.get("/filecheck")
+async def filecheck():
+    from pathlib import Path
+    parent = Path(".").resolve()
+    files = list(parent.glob("**/finanza2.html"))
+    return {"files": [str(f)+" ("+str(f.stat().st_size)+" bytes)" for f in files]}
+
 @app.get("/debug")
 async def debug():
     return {"REDIRECT_URL": REDIRECT_URL, "EB_SANDBOX": EB_SANDBOX, "EB_APP_ID": EB_APP_ID[:8]+"..."}
