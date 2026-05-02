@@ -298,11 +298,20 @@ body { background:var(--bg); color:var(--text); display:flex; flex-direction:col
           <div class="hero-chips" id="h-chips"></div>
         </div>
 
+        <!-- Fintonic-style category cards -->
+        <div id="cat-cards-row" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px"></div>
+
         <div class="g2">
           <div class="card">
             <div class="card-head">
-              <div class="card-title">Evolución 6 meses</div>
+              <div class="card-title">Ingresos vs Gastos</div>
               <div class="card-sub" id="chart-range"></div>
+            </div>
+            <!-- Month selector for chart -->
+            <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap" id="chart-toggle">
+              <div class="tx-pill on" onclick="setChartView('both',this)">Ambos</div>
+              <div class="tx-pill" onclick="setChartView('inc',this)">Solo ingresos</div>
+              <div class="tx-pill" onclick="setChartView('exp',this)">Solo gastos</div>
             </div>
             <div class="chart-wrap"><svg id="chart-svg" viewBox="0 0 500 120" preserveAspectRatio="none"></svg></div>
             <div class="chart-leg">
@@ -312,8 +321,16 @@ body { background:var(--bg); color:var(--text); display:flex; flex-direction:col
           </div>
           <div class="card">
             <div class="card-head">
-              <div class="card-title">Gastos por categoría</div>
+              <div class="card-title">Distribución</div>
               <div class="card-sub" id="cats-month"></div>
+            </div>
+            <!-- Mini donut -->
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+              <svg id="dash-donut" width="90" height="90" viewBox="0 0 90 90" style="flex-shrink:0"></svg>
+              <div style="flex:1;font-size:11px;color:var(--sub)">
+                <div id="dash-donut-top" style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:2px">—</div>
+                <div id="dash-donut-label">mayor gasto</div>
+              </div>
             </div>
             <div class="cats" id="cats-list"></div>
           </div>
@@ -640,21 +657,78 @@ function renderChart(y,m) {
   };
   const grid=[.25,.5,.75].map(f=>`<line x1="${P}" y1="${cy(mx*f)}" x2="${W-P}" y2="${cy(mx*f)}" stroke="#1e2230" stroke-width="1"/>`).join('');
   const lbls=months.map(({lbl},i)=>`<text x="${cx(i)}" y="${H+4}" text-anchor="middle" fill="#6b6f88" font-size="10" font-family="Bricolage Grotesque">${lbl}</text>`).join('');
-  document.getElementById('chart-svg').innerHTML=grid+area(inc,'#d4f244')+area(exp,'#ff5252')+lbls;
+  const showInc = chartView !== 'exp';
+  const showExp = chartView !== 'inc';
+  document.getElementById('chart-svg').innerHTML=grid+(showInc?area(inc,'#d4f244'):'')+(showExp?area(exp,'#ff5252'):'')+lbls;
   document.getElementById('chart-range').textContent=`${months[0].lbl} – ${months[5].lbl}`;
+}
+
+let chartView = 'both';
+function setChartView(v, el) {
+  chartView = v;
+  document.querySelectorAll('#chart-toggle .tx-pill').forEach(x=>x.classList.remove('on'));
+  el.classList.add('on');
+  const now=new Date();
+  renderChart(now.getFullYear(), now.getMonth());
 }
 
 function renderCatList(mo, now) {
   const cats={};
   mo.filter(t=>t.amount<0).forEach(t=>{ cats[t.cat]=(cats[t.cat]||0)+Math.abs(t.amount); });
   const total=Object.values(cats).reduce((a,b)=>a+b,0)||1;
+  const sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]);
   document.getElementById('cats-month').textContent=now.toLocaleString('es',{month:'long',year:'numeric'});
-  document.getElementById('cats-list').innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([name,amt])=>{
+
+  // Fintonic-style category cards
+  const cardsEl = document.getElementById('cat-cards-row');
+  if (cardsEl) {
+    cardsEl.innerHTML = sorted.slice(0,6).map(([name,amt])=>{
+      const c=catByName(name); const pct=(amt/total*100).toFixed(0);
+      const budget = S.budgets[name];
+      const over = budget && amt > budget;
+      return `<div style="background:var(--bg2);border:1px solid ${over?'rgba(255,82,82,.3)':c.color+'22'};border-radius:12px;padding:14px;cursor:pointer;transition:all .15s" onclick="setCatFilter('${name}',null);nav('movimientos',document.querySelectorAll('.sb-item')[1])">
+        <div style="font-size:26px;margin-bottom:8px">${c.icon}</div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:3px;font-weight:600">${name}</div>
+        <div style="font-size:16px;font-weight:800;color:${over?'var(--red)':c.color}">${fmt(amt)}</div>
+        <div style="height:3px;background:var(--bg4);border-radius:3px;margin-top:8px;overflow:hidden">
+          <div style="height:100%;width:${pct}%;background:${over?'var(--red)':c.color};border-radius:3px;transition:width .5s"></div>
+        </div>
+        <div style="font-size:10px;color:var(--sub);margin-top:4px">${pct}% del total${over?' · ⚠ límite superado':''}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Mini donut
+  const donutEl = document.getElementById('dash-donut');
+  if (donutEl && sorted.length) {
+    const cx=45,cy=45,r=38,inner=22;
+    let angle=-Math.PI/2;
+    const paths = sorted.slice(0,5).map(([name,amt])=>{
+      const c=catByName(name);
+      const sweep=amt/total*Math.PI*2;
+      const x1=cx+r*Math.cos(angle),y1=cy+r*Math.sin(angle);
+      angle+=sweep;
+      const x2=cx+r*Math.cos(angle),y2=cy+r*Math.sin(angle);
+      const ix1=cx+inner*Math.cos(angle-sweep),iy1=cy+inner*Math.sin(angle-sweep);
+      const ix2=cx+inner*Math.cos(angle),iy2=cy+inner*Math.sin(angle);
+      const large=sweep>Math.PI?1:0;
+      return `<path d="M${x1},${y1}A${r},${r},0,${large},1,${x2},${y2}L${ix2},${iy2}A${inner},${inner},0,${large},0,${ix1},${iy1}Z" fill="${c.color}" opacity=".9"/>`;
+    }).join('');
+    donutEl.innerHTML = paths;
+    const top = sorted[0];
+    const topC = catByName(top[0]);
+    document.getElementById('dash-donut-top').textContent = fmt(top[1]);
+    document.getElementById('dash-donut-label').textContent = topC.icon + ' ' + top[0];
+    document.getElementById('dash-donut-label').style.color = topC.color;
+  }
+
+  // Compact list
+  document.getElementById('cats-list').innerHTML=sorted.slice(0,5).map(([name,amt])=>{
     const c=catByName(name); const pct=(amt/total*100).toFixed(0);
     return `<div class="cat-row">
       <div class="cat-top">
         <div class="cat-name"><div class="cat-dot" style="background:${c.color}"></div>${c.icon} ${name}</div>
-        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:10px;color:var(--sub)">${pct}%</span><span style="font-size:12px;font-weight:700">${fmt(amt)}</span></div>
+        <div style="display:flex;gap:8px;align-items:center"><span style="font-size:10px;color:var(--sub)">${pct}%</span><span style="font-size:12px;font-weight:700">${fmt(amt)}</span></div>
       </div>
       <div class="cat-bar"><div class="cat-fill" style="width:${pct}%;background:${c.color}"></div></div>
     </div>`;
@@ -694,7 +768,8 @@ function renderTx() {
   txs.forEach(t=>{if(!groups[t.date])groups[t.date]=[];groups[t.date].push(t);});
   document.getElementById('tx-list').innerHTML=Object.keys(groups).sort((a,b)=>new Date(b)-new Date(a)).map(dt=>{
     const total=sum(groups[dt]);
-    return `<div class="tx-group-lbl"><span>${fmtDate(dt)}</span><span style="color:${total>=0?'var(--lime)':'var(--red)'}">${total>=0?'+':''}${fmt(total)}</span></div>`
+    const txCount=groups[dt].length;
+    return `<div class="tx-group-lbl"><span>${fmtDate(dt)} <span style="color:var(--sub2);font-weight:400">(${txCount})</span></span><span style="color:${total>=0?'var(--lime)':'var(--red)'}">${total>=0?'+':''}${fmt(total)}</span></div>`
       +groups[dt].map(txRow).join('');
   }).join('')||'<div style="text-align:center;padding:40px;color:var(--sub);font-style:italic">Sin resultados</div>';
 
